@@ -186,7 +186,7 @@ class SparkAdapter(SQLAdapter):
 
             if try_show_tables:
                 _, name, _ = row
-                information = self.parse_information(name)
+                information = self.parse_information(schema_relation.schema + '.' + name)
                 _schema = schema_relation.schema
             else:
                 _schema, name, _, information = row
